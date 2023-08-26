@@ -35,6 +35,11 @@ extension ViewController: UICollectionViewDataSource {
         cell.backgroundColor = colorData[indexPath.item]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+            return view
+        }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
@@ -49,3 +54,5 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+
+
